@@ -1,0 +1,54 @@
+// ========================================
+// EaseMotion CSS - Color Palette Mixin
+// ========================================
+
+// Default Palette
+$primary: #2563eb;
+$secondary: #7c3aed;
+$success: #16a34a;
+$warning: #f59e0b;
+$danger: #dc2626;
+$light: #f8fafc;
+$dark: #1e293b;
+
+/// Generates background, text, and border colors.
+///
+/// @param {Color} $bg - Background color
+/// @param {Color} $text - Text color
+/// @param {Color} $border - Border color (optional)
+///
+@mixin color-palette($bg, $text: #ffffff, $border: $bg) {
+  background-color: $bg;
+  color: $text;
+  border: 2px solid $border;
+}
+
+// Example Utility Classes
+
+.palette-primary {
+  @include color-palette($primary);
+}
+
+.palette-secondary {
+  @include color-palette($secondary);
+}
+
+.palette-success {
+  @include color-palette($success);
+}
+
+.palette-warning {
+  @include color-palette($warning, #111827);
+}
+
+.palette-danger {
+  @include color-palette($danger);
+}
+
+.palette-light {
+  @include color-palette($light, $dark, #cbd5e1);
+}
+
+.palette-dark {
+  @include color-palette($dark);
+}
